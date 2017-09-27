@@ -1,0 +1,29 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<div role="tabpanel">
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#machinelearning" aria-controls="machinelearning" role="tab" data-toggle="tab">Machine Learning</a></li>
+    <li role="presentation"><a href="#projects" aria-controls="Projects" role="tab" data-toggle="tab">Data Science Projects</a></li>
+    <li role="presentation"><a href="#statistics" aria-controls="statistics" role="tab" data-toggle="tab">Statistics</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active" id="machinelearning">
+	<ul>
+		{% for t in TOPIC_DICT["Basics"] %}
+			<li align="left"><a href="{{t[1]}}">{{t[0]}}</a></li>		
+		{% endfor %}
+	</ul>
+	</div>
+    <div role="tabpanel" class="tab-pane" id="projects">...</div>
+    <div role="tabpanel" class="tab-pane" id="Statistics">...</div>
+  </div>
+
+</div>
+
+{% endblock %}
