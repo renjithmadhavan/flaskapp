@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset="utf-8">
+    <title>Data Science Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/materialize.css') }}" rel="stylesheet" media="screen,projection"/>
+	<link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	<link href="http://cdn.pydata.org/bokeh/release/bokeh-0.12.7.min.css" rel="stylesheet" type="text/css">
+	<link href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.7.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<header>
+  <nav class="blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+	  <ul class="left"><a id="logo-container" href="/" class="brand-logo">Home</a></ul>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Login</a></li>
+		<li><a href="#">Register</a></li>
+		<li><a href="#">About</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+ 
+ <body>
+    <!-- -->
+	<div class="container">
+      {% block body %}{% endblock %}
+    </div>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
+	<script src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.7.min.js"></script>
+	<script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.7.min.js"></script>
+	<script>
+         $(document).ready(function() {
+            $('select').material_select();
+         });
+      </script>
+</body>
+
+</html>

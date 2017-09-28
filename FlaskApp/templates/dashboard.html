@@ -2,28 +2,32 @@
 
 {% block body %}
 
-<div role="tabpanel">
 
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#machinelearning" aria-controls="machinelearning" role="tab" data-toggle="tab">Machine Learning</a></li>
-    <li role="presentation"><a href="#projects" aria-controls="Projects" role="tab" data-toggle="tab">Data Science Projects</a></li>
-    <li role="presentation"><a href="#statistics" aria-controls="statistics" role="tab" data-toggle="tab">Statistics</a></li>
-  </ul>
 
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div role="tabpanel" class="tab-pane fade in active" id="machinelearning">
-	<ul>
-		{% for t in TOPIC_DICT["Basics"] %}
+  <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3"><a href="#test1">Machine Learning</a></li>
+        <li class="tab col s3"><a class="active" href="#test2">Data Science Projects</a></li>
+        <li class="tab col s3"><a href="#test3">Statistics</a></li>
+      </ul>
+    </div>
+    <div id="test1" class="col s12">
+		<ul>
+			{% for t in TOPIC_DICT["Basics"] %}
 			<li align="left"><a href="{{t[1]}}">{{t[0]}}</a></li>		
 		{% endfor %}
-	</ul>
+		</ul>
 	</div>
-    <div role="tabpanel" class="tab-pane" id="projects">...</div>
-    <div role="tabpanel" class="tab-pane" id="Statistics">...</div>
+    <div id="test2" class="col s12">
+		<ul>
+			{% for t in TOPIC_DICT["projects"] %}
+			<li align="left"><a href="{{t[1]}}">{{t[0]}}</a></li>		
+			{% endfor %}
+		</ul>
+	</div>
+    <div id="test3" class="col s12">Test 3</div>
   </div>
 
-</div>
 
 {% endblock %}

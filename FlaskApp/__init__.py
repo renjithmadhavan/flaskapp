@@ -1,4 +1,4 @@
-from flask import Flask, render_template, flash, request, redirect, url_for, session
+from flask import Flask, render_template, flash, request, redirect, url_for, session, make_response
 from content_management import Content
 from wtforms import Form, BooleanField, TextField, PasswordField, validators
 from passlib.hash import sha256_crypt
@@ -7,9 +7,46 @@ from pymysql import escape_string as thwart
 from functools import wraps
 import gc
 
+import pandas as pd
+from bokeh.charts import Histogram
+from bokeh.embed import components
+
+
 TOPIC_DICT = Content()
 app = Flask(__name__)
 app.secret_key= "sahahdt8712873236"
+
+# Load the Iris Data Set
+iris_df = pd.read_csv("data/iris.data", 
+    names=["Sepal Length", "Sepal Width", "Petal Length", "Petal Width", "Species"])
+feature_names = iris_df.columns[0:-1].values.tolist()
+
+# Create the main plot
+def create_figure(current_feature_name, bins):
+	p = Histogram(iris_df, current_feature_name, title=current_feature_name, color='Species', 
+	 	bins=bins, legend='top_right', width=600, height=400)
+
+	# Set the x axis label
+	p.xaxis.axis_label = current_feature_name
+
+	# Set the y axis label
+	p.yaxis.axis_label = 'Count'
+	return p
+	
+@app.route('/bokehviz')
+def index():
+	# Determine the selected feature
+	current_feature_name = request.args.get("feature_name")
+	if current_feature_name == None:
+		current_feature_name = "Sepal Length"
+
+	# Create the plot
+	plot = create_figure(current_feature_name, 10)
+		
+	# Embed plot into HTML via Flask Render
+	script, div = components(plot)
+	return render_template("iris_index1.html", script=script, div=div,
+		feature_names=feature_names,  current_feature_name=current_feature_name)	
 
 @app.route('/')
 def homepage():
@@ -50,7 +87,40 @@ def slashboard():
         return render_template("dashboard.html", TOPIC_DICT = shamwow)
     except Exception as e:
 	    return render_template("500.html", error = str(e))
-		
+
+
+@app.route("/testplot")
+def simple():
+    import datetime
+    import io
+    import random
+
+    from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+    from matplotlib.figure import Figure
+    from matplotlib.dates import DateFormatter
+
+    fig=Figure()
+    ax=fig.add_subplot(111)
+    x=[]
+    y=[]
+    now=datetime.datetime.now()
+    delta=datetime.timedelta(days=1)
+    for i in range(10):
+        x.append(now)
+        now+=delta
+        y.append(random.randint(0, 1000))
+    ax.plot_date(x, y, '-')
+    ax.xaxis.set_major_formatter(DateFormatter('%Y-%m-%d'))
+    fig.autofmt_xdate()
+    canvas=FigureCanvas(fig)
+    png_output = io.BytesIO()
+    canvas.print_png(png_output)
+    response=make_response(png_output.getvalue())
+    response.headers['Content-Type'] = 'image/png'
+    return response
+
+
+	
 @app.route('/login/', methods=["GET","POST"])
 def login_page():
     error = ''
