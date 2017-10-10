@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset="utf-8">
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/materialize.css') }}" rel="stylesheet" media="screen,projection"/>
+	<link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <!--  apple-touch-icon -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ url_for('static', filename='assets/assets/img/ico/apple-touch-icon-144-precomposed.png') }} >
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ url_for('static', filename='assets/assets/img/ico/apple-touch-icon-114-precomposed.png') }}" >
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ url_for('static', filename='assets/assets/img/ico/apple-touch-icon-72-precomposed.png') }}" >
+        <link rel="apple-touch-icon-precomposed" href="{{ url_for('static', filename='assets/assets/img/ico/apple-touch-icon-57-precomposed.png') }}" >
+
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500,700,900' rel='stylesheet' type='text/css'>
+        <!-- Material Icons CSS -->
+        <link href="{{ url_for('static', filename='assets/assets/fonts/iconfont/material-icons.css') }}" rel="stylesheet">
+        <!-- FontAwesome CSS -->                  
+        <link href="{{ url_for('static', filename='assets/assets/fonts/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+        <!-- magnific-popup -->                 
+        <link href="{{ url_for('static', filename='assets/assets/magnific-popup/magnific-popup.css') }}" rel="stylesheet">
+        <!-- flexslider -->                     
+        <link href="{{ url_for('static', filename='assets/assets/flexSlider/flexslider.css') }}" rel="stylesheet">
+        <!-- owl.carousel -->
+        <link href="{{ url_for('static', filename='assets/assets/owl.carousel/assets/owl.carousel.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='assets/assets/owl.carousel/assets/owl.theme.default.min.css') }}" rel="stylesheet">
+        <!-- materialize -->
+        <link href="{{ url_for('static', filename='assets/assets/materialize/css/materialize.min.css') }}" rel="stylesheet">
+        <!-- Bootstrap -->
+        <link href="{{ url_for('static', filename='assets/assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <!-- shortcodes -->
+        <link href="{{ url_for('static', filename='assets/assets/css/shortcodes/shortcodes.css') }}" rel="stylesheet">
+		<!-- Style CSS -->
+        <link href="{{ url_for('static', filename='assets/style.css') }}" rel="stylesheet">
+
+
+</head>
+
+
+
+
+
+	
+ 
+ <body id="top" class="has-header-search" >
+ 
+ 
+        <!--header start-->
+        <header id="header" class="tt-nav nav-border-bottom">
+
+            <div class="header-sticky light-header ">
+
+                <div class="container">
+
+                    <div class="search-wrapper">
+                        <div class="search-trigger pull-right">
+                            <div class='search-btn'></div>
+                            <i class="material-icons">&#xE8B6;</i>
+                        </div>
+
+                        <!-- Modal Search Form -->
+                        <i class="search-close material-icons">&#xE5CD;</i>
+                        <div class="search-form-wrapper">
+                            <form action="#" class="white-form">
+                                <div class="input-field">
+                                    <input type="text" name="search" id="search">
+                                    <label for="search" class="">Search Here...</label>
+                                </div>
+                                <button class="btn pink search-button waves-effect waves-light" type="submit"><i class="material-icons">&#xE8B6;</i></button>
+                                
+                            </form>
+                        </div>
+                    </div><!-- /.search-wrapper -->
+
+                    <div id="materialize-menu" class="menuzord">
+
+                        <!--logo start-->
+                        <a href="index.html" class="logo-brand">
+                            <img class="retina" src="{{ url_for('static', filename='assets/assets/img/logo.png') }}" alt=""/>
+                        </a>
+                        <!--logo end-->
+
+                        <!--mega menu start-->
+						<ul class="menuzord-menu pull-right">
+                            <li><a href="/dashboard">Blog</a>
+                            </li>
+						</ul>
+                        <ul class="menuzord-menu pull-right">
+                            <li><a href="/dashboard">Home</a>
+                            </li>
+						</ul>
+
+
+                        <!--mega menu end-->
+
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--header end-->
+ 
+ 
+ 
+    <!-- -->
+	<div class="container">
+	
+      {% block body %}{% endblock %}
+	  
+	  
+	  		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.7.min.js"></script>
+	<script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.7.min.js"></script>
+	<script>
+	$(document).ready(function() {
+	$('select').material_select();
+	});
+	</script>
+	  
+    </div>
+	
+
+
+
+  	  
+
+</body>
+
+</html>

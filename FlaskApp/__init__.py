@@ -6,15 +6,24 @@ from dbconnect import connection
 from pymysql import escape_string as thwart
 from functools import wraps
 import gc
+import base64
 
 import pandas as pd
 from bokeh.charts import Histogram
 from bokeh.embed import components
+import datetime
+import io
+import random
 
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+from matplotlib.figure import Figure
+from matplotlib.dates import DateFormatter
 
 TOPIC_DICT = Content()
 app = Flask(__name__)
 app.secret_key= "sahahdt8712873236"
+
+
 
 # Load the Iris Data Set
 iris_df = pd.read_csv("data/iris.data", 
@@ -57,6 +66,14 @@ def dashboard():
     flash("flash test!!!!")
     return render_template("dashboard.html", TOPIC_DICT = TOPIC_DICT)
 	
+@app.route('/blog/')
+def blog():
+    return render_template("blog_template.html", title='Data Science Blog')
+	
+@app.route('/matplots/')
+def matplots():
+    return render_template("matplotlibplot.html")
+	
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template("404.html")
@@ -91,14 +108,6 @@ def slashboard():
 
 @app.route("/testplot")
 def simple():
-    import datetime
-    import io
-    import random
-
-    from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
-    from matplotlib.figure import Figure
-    from matplotlib.dates import DateFormatter
-
     fig=Figure()
     ax=fig.add_subplot(111)
     x=[]
@@ -119,6 +128,17 @@ def simple():
     response.headers['Content-Type'] = 'image/png'
     return response
 
+
+	
+@app.route(TOPIC_DICT["Basics"][0][1])
+def linear_regression_blog():
+    title = str(TOPIC_DICT["Basics"][0][0])
+    return render_template("linear_regression.html", TOPIC_DICT = TOPIC_DICT, title = title)
+	
+# @app.route(TOPIC_DICT["Basics"][0][1])
+# def linear_regression_blog():
+    # #title = str(TOPIC_DICT["Basics"][0][0])
+    # return render_template("blog-single-sidebar-left.html")
 
 	
 @app.route('/login/', methods=["GET","POST"])

@@ -1,33 +1,30 @@
-{% extends "bokeh_header.html" %}
+{% extends "header.html" %}
 
 {% block body %}
-	<H1>Iris Histogram</H1>
-
+<p>
+        <H1>Iris Histogram</H1>
+</p>
 <div class="row">
 <form action="/bokehviz">
 <div class="input-field col s5">
 
     <select name="feature_name">
-		<option value="" disabled selected>Choose your option</option>
-		{% for feature in feature_names %}
-		{% if feature == current_feature_name %}  
-			<option selected value="{{ feature }}">{{ feature }}</option>
-		{% else %}  
-			<option value="{{ feature }}">{{ feature }}</option>   
-		{% endif %}   
-		{% endfor %}
-	</select>
-	<input type="submit">
+                <option value="" disabled selected>Choose your option</option>
+                {% for feature in feature_names %}
+                {% if feature == current_feature_name %}
+                        <option selected value="{{ feature }}">{{ feature }}</option>
+                {% else %}
+                        <option value="{{ feature }}">{{ feature }}</option>
+                {% endif %}
+                {% endfor %}
+        </select>
+        <input type="submit">
 </div>
 </form>
 </div>
 
 
-	{{ script|safe }}
-	{{ div|safe }}
-
-
-	
-
+        {{ script|safe }}
+        {{ div|safe }}
 
 {% endblock %}

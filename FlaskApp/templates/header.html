@@ -2,43 +2,291 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset="utf-8">
-    <title>Data Science Portfolio</title>
+    <title>{{ title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="{{ url_for('static', filename='css/materialize.css') }}" rel="stylesheet" media="screen,projection"/>
 	<link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <!--  apple-touch-icon -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ url_for('static', filename='assets/assets/img/ico/apple-touch-icon-144-precomposed.png') }} >
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ url_for('static', filename='assets/assets/img/ico/apple-touch-icon-114-precomposed.png') }}" >
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ url_for('static', filename='assets/assets/img/ico/apple-touch-icon-72-precomposed.png') }}" >
+        <link rel="apple-touch-icon-precomposed" href="{{ url_for('static', filename='assets/assets/img/ico/apple-touch-icon-57-precomposed.png') }}" >
+
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500,700,900' rel='stylesheet' type='text/css'>
+        <!-- Material Icons CSS -->
+        <link href="{{ url_for('static', filename='assets/assets/fonts/iconfont/material-icons.css') }}" rel="stylesheet">
+        <!-- FontAwesome CSS -->                  
+        <link href="{{ url_for('static', filename='assets/assets/fonts/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+        <!-- magnific-popup -->                 
+        <link href="{{ url_for('static', filename='assets/assets/magnific-popup/magnific-popup.css') }}" rel="stylesheet">
+        <!-- flexslider -->                     
+        <link href="{{ url_for('static', filename='assets/assets/flexSlider/flexslider.css') }}" rel="stylesheet">
+        <!-- owl.carousel -->
+        <link href="{{ url_for('static', filename='assets/assets/owl.carousel/assets/owl.carousel.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='assets/assets/owl.carousel/assets/owl.theme.default.min.css') }}" rel="stylesheet">
+        <!-- materialize -->
+        <link href="{{ url_for('static', filename='assets/assets/materialize/css/materialize.min.css') }}" rel="stylesheet">
+        <!-- Bootstrap -->
+        <link href="{{ url_for('static', filename='assets/assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <!-- shortcodes -->
+        <link href="{{ url_for('static', filename='assets/assets/css/shortcodes/shortcodes.css') }}" rel="stylesheet">
+		<!-- Style CSS -->
+        <link href="{{ url_for('static', filename='assets/style.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='assets/assets/css/skins/agency.css') }}" rel="stylesheet">
+	
+	        <link href="http://cdn.pydata.org/bokeh/release/bokeh-0.12.7.min.css" rel="stylesheet" type="text/css">
+        <link href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.7.min.css" rel="stylesheet" type="text/css">
+
+
+		<style>
+			li.L0, li.L1, li.L2, li.L3,
+			li.L5, li.L6, li.L7, li.L8 {
+			list-style-type: decimal !important;
+		}
+
+		</style>
 </head>
-<header>
-  <nav class="blue lighten-1" role="navigation">
-    <div class="nav-wrapper container">
-	  <ul class="left"><a id="logo-container" href="/" class="brand-logo">Home</a></ul>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Login</a></li>
-		<li><a href="#">Register</a></li>
-		<li><a href="#">About</a></li>
-      </ul>
-	  
-	  
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Login</a></li>
-		<li><a href="#">Register</a></li>
-		<li><a href="#">About</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i>
-	  
-	  </a>
-    </div>
-  </nav>
-</header>
+
+
+
+
+
+	
  
- <body>
+ <body id="top" class="has-header-search" >
+ 
+ 
+        <!--header start-->
+        <header id="header" class="tt-nav nav-border-bottom">
+
+            <div class="header-sticky light-header ">
+
+                <div class="container">
+
+                    <div class="search-wrapper">
+                        <div class="search-trigger pull-right">
+                            <div class='search-btn'></div>
+                            <i class="material-icons">&#xE8B6;</i>
+                        </div>
+
+                        <!-- Modal Search Form -->
+                        <i class="search-close material-icons">&#xE5CD;</i>
+                        <div class="search-form-wrapper">
+                            <form action="#" class="white-form">
+                                <div class="input-field">
+                                    <input type="text" name="search" id="search">
+                                    <label for="search" class="">Search Here...</label>
+                                </div>
+                                <button class="btn pink search-button waves-effect waves-light" type="submit"><i class="material-icons">&#xE8B6;</i></button>
+                                
+                            </form>
+                        </div>
+                    </div><!-- /.search-wrapper -->
+
+                    <div id="materialize-menu" class="menuzord">
+
+                        <!--logo start-->
+                        <a href="/" class="logo-brand">
+                            <img class="retina" src="{{ url_for('static', filename='assets/assets/img/logo.png') }}" alt=""/>
+                        </a>
+                        <!--logo end-->
+
+                        <!--mega menu start-->
+						<ul class="menuzord-menu pull-right">
+                            <li><a href="/dashboard">Blog</a>
+                            </li>
+						</ul>
+                        <ul class="menuzord-menu pull-right">
+                            <li><a href="/dashboard">Home</a>
+                            </li>
+						</ul>
+
+
+                        <!--mega menu end-->
+
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--header end-->
+ 
+ 
+ 
     <!-- -->
 	<div class="container">
+	
       {% block body %}{% endblock %}
     </div>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
+	
+	<!-- <div class="wrapper valign-wrapper"> </div> -->
+	
+
+    <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+    <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/materialize.min.js') }}"></script> -->
+	
+	<script>
+function init () {
+    var text = document.getElementById('text');
+    function resize () {
+        text.style.height = 'auto';
+        text.style.height = text.scrollHeight+'px';
+		text.style.width = '600px';
+    }
+	resize();
+}
+init();
+	</script>
+	
+	
+	  <script>
+  $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+  
+  </script>
+  <script>
+  $('textarea').autoResize();
+  </script>
+  
+  {% block bokeh %}
+
+  {% endblock %}
+  	  
+
+
+        <!-- jQuery -->
+        <script src="{{ url_for('static', filename='assets/assets/js/jquery-2.1.3.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/assets/bootstrap/js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/assets/materialize/js/materialize.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/assets/js/menuzord.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/assets/js/bootstrap-tabcollapse.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/assets/js/jquery.easing.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/assets/js/imagesloaded.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/assets/js/instafeed.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/assets/js/jquery.sticky.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/assets/js/smoothscroll.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/assets/js/twitterFetcher.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/assets/js/jquery.stellar.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/assets/js/jquery.shuffle.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/assets/owl.carousel/owl.carousel.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/assets/flexSlider/jquery.flexslider-min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/assets/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/assets/js/scripts.js') }}"></script>
+		
+		
+        <!-- add this script to show twitter feed in sidebar -->
+        <script>
+
+            if ($('#twitter-gallery-feed').length > 0) {
+                
+                var twitterWidgetConfig = {
+                    id: "613424231099953152", //put your Widget ID here
+                    domId: "twitter-gallery-feed",
+                    maxTweets: 3,
+                    enableLinks: true,
+                    showUser: false,
+                    showTime: false,
+                    showInteraction: false,
+                    customCallback: handleTweets
+                };
+
+                twitterFetcher.fetch(twitterWidgetConfig);
+
+                function handleTweets(tweets) {
+                    var x = tweets.length;
+                    var n = 0;
+                    var html = "";
+                    while (n < x) {
+                        html += '<div class="item">' + tweets[n] +
+                            "</div>";
+                        n++
+                    }
+
+                    $(".twitter-widget").html(html);
+                    $(".twitter_retweet_icon").html(
+                        '<i class="fa fa-retweet"></i>');
+                    $(".twitter_reply_icon").html(
+                        '<i class="fa fa-reply"></i>');
+                    $(".twitter_fav_icon").html(
+                        '<i class="fa fa-star"></i>');
+                    $(".twitter-widget").owlCarousel({
+                        items: 1,
+                        loop: true,
+                        autoplay: true,
+                        autoHeight: true
+                    });
+                }
+
+            }
+        </script>
+		<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=desert&amp;lang=python"></script>
+    <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+    <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/materialize.min.js') }}"></script> -->
+        <script src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.7.min.js"></script>
+        <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.7.min.js"></script>
+        <script>
+         $(document).ready(function() {
+            $('select').material_select();
+         });
+      </script>
+
+    <footer class="footer footer-four">
+  
+ 
+
+              <div class="primary-footer brand-bg  darken-2 text-center">
+			  
+
+			  
+                <div class="container">
+
+                  <a href="#top" class="page-scroll btn-floating btn-large pink back-top waves-effect waves-light tt-animate btt" data-section="#top">
+                    <i class="material-icons">&#xE316;</i>
+                  </a>
+
+                  <ul class="social-link tt-animate ltr mt-20">
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                  </ul>
+
+                  <hr class="mt-15">
+
+                  <div class="row">
+                    <div class="col-md-12">
+                          <!-- <div class="footer-logo"> -->
+                            <!-- <img src="assets/img/logo-white.png" alt=""> -->
+                          <!-- </div> -->
+
+                          <span class="copy-text">Copyright &copy; 2017 <a href="#">Data Science and Machine Learning Blog</a></span>
+                          <div class="footer-intro">
+                            <p>In search of excellence</p>
+                          </div>
+                    </div><!-- /.col-md-12 -->
+                  </div><!-- /.row -->
+				  
+				  
+
+			
+
+				  
+                </div><!-- /.container -->
+            </div><!-- /.primary-footer -->
+			
+						  				              <div class="secondary-footer brand-bg darken-2 text-center">
+                <!-- <div class="container"> -->
+                    <ul>
+                      <li><a href="#">Home</a></li>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Contact</a></li>
+                    </ul>
+                <!-- </div><!-- /.container --> -->
+            </div><!-- /.secondary-footer -->
+
+        </footer>
+
 </body>
 
 </html>

@@ -1,0 +1,228 @@
+{% extends "header.html" %}
+
+
+{% block body %}
+        <!-- blog section start -->
+        <section class="blog-section section-padding">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-4">
+                      <div class="tt-sidebar-wrapper" role="complementary">
+                          <div class="widget widget_search">
+                            <form role="search" method="get" class="search-form" >
+                              <input type="text" class="form-control" value="" name="s" id="s" placeholder="Write any keywords">
+                              <button type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                          </div><!-- /.widget_search -->
+
+
+                          <div class="widget widget_tt_author_widget">
+
+                            <div class="author-info-wrapper">
+
+                                <div class="author-cover">
+                                    <img src="assets/assets/img/blog/author-large-thumb.jpg"  alt="">
+                                </div>
+
+                                <div class="author-avatar">
+                                   <img src="{{ url_for('static', filename='assets/assets/img/blog/author-2.jpg') }}"  alt="">
+
+                                    <h2>Renjith Madhavan</h2>
+                                    <span>Data Science/ Big Data Engineer</span>
+                                </div>
+
+                                <p>All these men were men of conviction. They deeply believed in what they were doing and put their reputations.</p>
+
+                                <div class="author-social-links">
+                                    <ul class="list-inline">
+                                        <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div> <!-- /author-info-wrapper -->
+                          </div><!-- /.widget_tt_author_widget -->
+
+
+
+                                      <!-- <div class="media"> -->
+                                        <!-- <a class="media-left" href="#"> -->
+                                          <!-- <img src="assets/img/blog/recent-thumb-4.jpg" alt=""> -->
+                                        <!-- </a> -->
+
+                                        <!-- <div class="media-body"> -->
+                                          <!-- <h4><a href="#">What never to tweet about</a></h4> -->
+                                        <!-- </div> <!-- /.media-body -->
+                                      <!-- </div> <!-- /.media --> 
+
+                                      <!-- <div class="media"> -->
+                                        <!-- <a class="media-left" href="#"> -->
+                                          <!-- <img src="assets/img/blog/recent-thumb-5.jpg" alt=""> -->
+                                        <!-- </a> -->
+
+                                        <!-- <div class="media-body"> -->
+                                          <!-- <h4><a href="#">Men have become the tools of their tools.</a></h4> -->
+                                        <!-- </div> <!-- /.media-body --> 
+                                      <!-- </div> <!-- /.media -->
+
+                                    <!-- </div> -->
+                                <!-- </div><!-- /.tab-content --> 
+                            <!-- </div><!-- /.tt-popular-post --> 
+                          <!-- </div><!-- /.widget_tt_popular_post -->
+
+
+                          <!-- <div class="widget widget_categories"> -->
+                            <!-- <h3 class="widget-title">Categories</h3>    -->
+                            <!-- <ul> -->
+                              <!-- <li><a href="#">Technology</a></li> -->
+                              <!-- <li><a href="#">Media</a></li> -->
+                              <!-- <li><a href="#">Video</a></li> -->
+                              <!-- <li><a href="#">Audio</a></li> -->
+                              <!-- <li><a href="#">Design</a></li> -->
+                              <!-- <li><a href="#">Material</a></li> -->
+                            <!-- </ul> -->
+                          <!-- </div><!-- /.widget_categories -->
+
+
+        
+                      </div><!-- /.tt-sidebar-wrapper -->
+                    </div><!-- /.col-md-4 -->
+
+                    <div class="col-md-8">
+                      <div class="posts-content single-post">
+
+                        <article class="post-wrapper">
+
+                          <header class="entry-header-wrapper clearfix">
+
+                            <!-- <div class="author-thumb waves-effect waves-light"> -->
+                              <!-- <a href="#"><img src="assets/img/blog/author.jpg" alt=""></a>                 -->
+                            <!-- </div> -->
+                            
+                            <div class="entry-header">
+                              <h2 class="entry-title">{{ title }}</h2>
+
+                              <div class="entry-meta">
+                                  <ul class="list-inline">
+                                      <li>
+                                          <i class="fa fa-user"></i><a href="#">Renjith Madhavan</a>
+                                      </li>
+
+                                      <li>
+                                          <i class="fa fa-clock-o"></i><a href="#">Sep 30, 2017</a>
+                                      </li>
+
+                                      <li>
+                                          <i class="fa fa-heart-o"></i><a href="#"><span>1</span></a>
+                                      </li>
+
+                                      <li>
+                                          <i class="fa fa-comment-o"></i><a href="#">3</a>
+                                      </li>
+                                  </ul>
+                              </div><!-- .entry-meta -->
+                            </div>
+
+                          </header><!-- /.entry-header-wrapper -->
+
+                          <div class="thumb-wrapper">
+                            <img src="{{ url_for('static', filename='assets/assets/img/blog/blog-1.jpg') }}" class="img-responsive" alt="" >
+                          </div><!-- .post-thumb -->
+
+
+{% block test %}{% endblock %}
+
+
+						  
+						  
+						  
+                          <footer class="entry-footer">
+                            <div class="post-tags">
+                              <span class="tags-links">
+                                <i class="fa fa-tags"></i><a href="#">Technology,</a> <a href="#" rel="tag">material design</a>
+                              </span>
+                            </div> <!-- .post-tags -->
+
+                            <ul class="list-inline right share-post">
+                                <li><a href="#"><i class="fa fa-facebook"></i> <span>Share</span></a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-twitter"></i> <span>Tweet</span></a>
+                                </li>
+                            </ul>
+                          </footer>
+
+                        </article><!-- /.post-wrapper -->
+
+                        <nav class="single-post-navigation" role="navigation">
+                          <div class="row">
+                            <!-- Previous Post -->
+                            <div class="col-xs-6">
+                              <div class="previous-post-link">
+                                <a class="waves-effect waves-light" href="#"><i class="fa fa-long-arrow-left"></i>Read Previous Post</a>
+                              </div>
+                            </div>
+
+                            <!-- Next Post -->
+                            <div class="col-xs-6">
+                              <div class="next-post-link">
+                                <a class="waves-effect waves-light" href="#">Read Next Post<i class="fa fa-long-arrow-right"></i></a>
+                              </div>
+                            </div>
+                          </div> <!-- .row -->
+                        </nav>
+
+ 
+
+                      </div><!-- /.posts-content -->
+					  
+					  
+					  
+					<div class="row">
+								<div id="disqus_thread"></div>
+								<script>
+									/**
+									*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT 
+									*  THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR 
+									*  PLATFORM OR CMS.
+									*  
+									*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: 
+									*  https://disqus.com/admin/universalcode/#configuration-variables
+									*/
+									/*
+									var disqus_config = function () {
+										// Replace PAGE_URL with your page's canonical URL variable
+										this.page.url = PAGE_URL;  
+										
+										// Replace PAGE_IDENTIFIER with your page's unique identifier variable
+										this.page.identifier = PAGE_IDENTIFIER; 
+									};
+									*/
+									
+									(function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+										var d = document, s = d.createElement('script');
+										
+										// IMPORTANT: Replace EXAMPLE with your forum shortname!
+										s.src = 'https://rdatastats.disqus.com/embed.js';
+										
+										s.setAttribute('data-timestamp', +new Date());
+										(d.head || d.body).appendChild(s);
+									})();
+								</script>
+								<noscript>
+									Please enable JavaScript to view the 
+									<a href="https://disqus.com/?ref_noscript" rel="nofollow">
+										comments powered by Disqus.
+									</a>
+								</noscript>
+						</div>
+
+					  		
+                    </div><!-- /.col-md-8 -->
+
+                  </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section>
+        <!-- blog section end -->		
+		
+{% endblock %}
